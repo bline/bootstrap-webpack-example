@@ -45,7 +45,7 @@ var IndexSources = [
 // markup setup to use line numbers started at specified line. Used in both docco and
 // doccoHtml to add prettify markup to the code sections of the docs.
 var highlight = function (code, startLine) {
-  html = '<?prettify';
+  var html = '<?prettify';
   if (_.isNumber(startLine))
     html += ' linenums=' + startLine;
   html += '><pre class="prettyprint">' + _.escape(code) + '</pre>'
@@ -62,7 +62,7 @@ marked.setOptions({ highlight: highlight });
 // [google-code-prettify](https://code.google.com/p/google-code-prettify/)
 var doccoHtml = function (path, html, config) {
   var walk, $, docs = [], sections = [], marker = "<!-- __MARKER__ -->";
-  isValidComment = function (node) {
+  var isValidComment = function (node) {
     return node.type === 'comment' && !String(node.nodeValue).match(/\[if\s+[^\]]+\]/);
   };
   walk = function () {
