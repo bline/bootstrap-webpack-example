@@ -1,5 +1,11 @@
+'use strict';
+// ## bootstrap-webpack Configuration
 
 module.exports = {
+  // ### Scripts
+  // Any scripts here set to false will never
+  // make it to the client, it's not packaged
+  // by webpack.
   scripts: {
     'transition': true,
     'alert': true,
@@ -14,6 +20,9 @@ module.exports = {
     'tab': true,
     'affix': true
   },
+  // ### Styles
+  // Enable or disable certain less components and thus remove
+  // the css for them from the build.
   styles: {
     "mixins": true,
 
