@@ -1,4 +1,4 @@
-
+'use strict';
 // # Main Entry Point
 //
 // This is the entry point webpack loads when we

@@ -1,3 +1,4 @@
+'use strict';
 // ## Setup
 var _ = require('lodash');
 var del = require("del");
