@@ -178,7 +178,7 @@ gulp.task("watch", ["build"], function () {
 
 // ### task deploy
 // Deploy to Github pages. *UNTESTED*
-gulp.task("deploy", function () {
+gulp.task("deploy", ['build'], function () {
   return gulp.src("dist/**/*")
     .pipe($.ghPages('git@github.com:bline/bootstrap-webpack-example.git'));
 });
