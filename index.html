@@ -1,0 +1,1721 @@
+<!-- ## index.html -->
+<!-- ### Html Header -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Starter Template for Bootstrap</title>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="container">
+      <!-- ### Main Header -->
+      <div id="header" class="jumbotron">
+        <h2>bootstrap-webpack example</h2>
+        <p>
+          This is an example of using <a href="https://github.com/bline/bootstrap-webpack">bootstrap-webpack</a>.
+          You may also find the gulpfile useful if you use <a href="http://gulpjs.com/">gulp</a>.
+        </p>
+        <p>
+          <a class="btn btn-primary" href="https://github.com/bline/bootstrap-webpack">bootstrap-webpack</a>
+          <a class="btn btn-info" href="https://github.com/bline/bootstrap-webpack-example">boostrap-webpack-example</a>
+        </p>
+      </div>
+
+<!-- 
+### Navigation
+This navigation bar is affixed to the top of the screen once
+the browser scrolls past the [Main Header].
+-->
+      <div id="nav">
+        <nav class="navbar navbar-default navbar-static">
+          <div class="container">
+            <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+            <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="glyphicon glyphicon-bar"></span>
+              <span class="glyphicon glyphicon-bar"></span>
+              <span class="glyphicon glyphicon-bar"></span>
+            </a>
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav" role="tablist">
+                <!-- Loop over each file and present a navigation link to activate the tab.  -->
+                
+                  <li role="presentation" class="active">
+                    <a href="#file-1" role="tab" data-toggle="tab">index.js</a>
+                  </li>
+                
+                  <li role="presentation" class="">
+                    <a href="#file-2" role="tab" data-toggle="tab">index.html</a>
+                  </li>
+                
+                  <li role="presentation" class="">
+                    <a href="#file-3" role="tab" data-toggle="tab">webpack.config.js</a>
+                  </li>
+                
+                  <li role="presentation" class="">
+                    <a href="#file-4" role="tab" data-toggle="tab">gulpfile.js</a>
+                  </li>
+                
+                  <li role="presentation" class="">
+                    <a href="#file-5" role="tab" data-toggle="tab">karma.conf.js</a>
+                  </li>
+                
+                  <li role="presentation" class="">
+                    <a href="#file-6" role="tab" data-toggle="tab">style.less</a>
+                  </li>
+                
+                  <li role="presentation" class="">
+                    <a href="#file-7" role="tab" data-toggle="tab">bootstrap.config.less</a>
+                  </li>
+                
+                  <li role="presentation" class="">
+                    <a href="#file-8" role="tab" data-toggle="tab">bootstrap.config.js</a>
+                  </li>
+                
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+<!--
+### Main Content
+Outputs the generated html and docs in two panes.
+-->
+      <div class="tab-content doc-content">
+        
+          <div role="tabpanel" class="tab-pane fade in active" id="file-1">
+            <table class="file-table">
+              <!-- doc.docco is an array of sections. Each one contains the -->
+              <!-- html for displaying the documention and code associated with it. -->
+              
+                <tr>
+                  <td class="file-docs">
+                    
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      &nbsp;
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <h1 id="main-entry-point">Main Entry Point</h1>
+<p>This is the entry point webpack loads when we
+are not testing. Normally all your app code would
+initialize here. This is however just a test to load
+<a href="http://getbootstrap.com/">bootstrap</a> using
+<a href="https://github.com/bline/bootstrap-webpack">bootstrap-webpack</a></p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=9><pre class="prettyprint">require(&#39;bootstrap-webpack!./bootstrap.config.js&#39;);
+var $ = require(&#39;jquery&#39;);
+
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <p>Affix our navigation when scrolling past
+the main header.</p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=14><pre class="prettyprint">$(function () {
+  var $header = $(&#39;#header&#39;);
+  $(&#39;#nav&#39;).affix({
+    offset: {
+      top: function () {
+        return $header.offset().top + $header.outerHeight(true);
+      }
+    }
+  });
+});
+
+</pre>
+                    
+                  </td>
+                </tr>
+              
+            </table>
+          </div>
+        
+          <div role="tabpanel" class="tab-pane fade" id="file-2">
+            <table class="file-table">
+              <!-- doc.docco is an array of sections. Each one contains the -->
+              <!-- html for displaying the documention and code associated with it. -->
+              
+                <tr>
+                  <td class="file-docs">
+                    
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      &nbsp;
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <h2 id="index-html">index.html</h2>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      &nbsp;
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <h3 id="html-header">Html Header</h3>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=3><pre class="prettyprint">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;meta name=&quot;description&quot; content=&quot;&quot;&gt;
+    &lt;meta name=&quot;author&quot; content=&quot;&quot;&gt;
+
+    &lt;title&gt;Starter Template for Bootstrap&lt;/title&gt;
+
+    </pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <p> HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries </p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=15><pre class="prettyprint">
+    &lt;!--[if lt IE 9]&gt;
+      &lt;script src=&quot;https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js&quot;&gt;&lt;/script&gt;
+      &lt;script src=&quot;https://oss.maxcdn.com/respond/1.4.2/respond.min.js&quot;&gt;&lt;/script&gt;
+    &lt;![endif]--&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+
+    &lt;div class=&quot;container&quot;&gt;
+      </pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <h3 id="main-header">Main Header</h3>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=25><pre class="prettyprint">
+      &lt;div id=&quot;header&quot; class=&quot;jumbotron&quot;&gt;
+        &lt;h2&gt;bootstrap-webpack example&lt;/h2&gt;
+        &lt;p&gt;
+          This is an example of using &lt;a href=&quot;https://github.com/bline/bootstrap-webpack&quot;&gt;bootstrap-webpack&lt;/a&gt;.
+          You may also find the gulpfile useful if you use &lt;a href=&quot;http://gulpjs.com/&quot;&gt;gulp&lt;/a&gt;.
+        &lt;/p&gt;
+        &lt;p&gt;
+          &lt;a class=&quot;btn btn-primary&quot; href=&quot;https://github.com/bline/bootstrap-webpack&quot;&gt;bootstrap-webpack&lt;/a&gt;
+          &lt;a class=&quot;btn btn-info&quot; href=&quot;https://github.com/bline/bootstrap-webpack-example&quot;&gt;boostrap-webpack-example&lt;/a&gt;
+        &lt;/p&gt;
+      &lt;/div&gt;
+
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <h3 id="navigation">Navigation</h3>
+<p>This navigation bar is affixed to the top of the screen once
+the browser scrolls past the [Main Header].</p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=42><pre class="prettyprint">
+      &lt;div id=&quot;nav&quot;&gt;
+        &lt;nav class=&quot;navbar navbar-default navbar-static&quot;&gt;
+          &lt;div class=&quot;container&quot;&gt;
+            </pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <p> .btn-navbar is used as the toggle for collapsed navbar content </p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=46><pre class="prettyprint">
+            &lt;a class=&quot;navbar-toggle&quot; data-toggle=&quot;collapse&quot; data-target=&quot;.navbar-collapse&quot;&gt;
+              &lt;span class=&quot;glyphicon glyphicon-bar&quot;&gt;&lt;/span&gt;
+              &lt;span class=&quot;glyphicon glyphicon-bar&quot;&gt;&lt;/span&gt;
+              &lt;span class=&quot;glyphicon glyphicon-bar&quot;&gt;&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;div class=&quot;navbar-collapse collapse&quot;&gt;
+              &lt;ul class=&quot;nav navbar-nav&quot; role=&quot;tablist&quot;&gt;
+                </pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <p> Loop over each file and present a navigation link to activate the tab.  </p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=54><pre class="prettyprint">
+                [[ _.forEach(docs, function (doc, i) { ]]
+                  &lt;li role=&quot;presentation&quot; class=&quot;[[= i === 0 ? &amp;apos;active&amp;apos; : &amp;apos;&amp;apos; ]]&quot;&gt;
+                    &lt;a href=&quot;#[[= doc.id ]]&quot; role=&quot;tab&quot; data-toggle=&quot;tab&quot;&gt;[[= doc.file.relative ]]&lt;/a&gt;
+                  &lt;/li&gt;
+                [[ }); ]]
+              &lt;/ul&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/nav&gt;
+      &lt;/div&gt;
+
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <h3 id="main-content">Main Content</h3>
+<p>Outputs the generated html and docs in two panes.</p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=69><pre class="prettyprint">
+      &lt;div class=&quot;tab-content doc-content&quot;&gt;
+        [[ _.forEach(docs, function (doc, i) { ]]
+          &lt;div role=&quot;tabpanel&quot; class=&quot;tab-pane fade[[= i === 0 ? &amp;apos; in active&amp;apos; : &amp;apos;&amp;apos; ]]&quot; id=&quot;[[= doc.id ]]&quot;&gt;
+            &lt;table class=&quot;file-table&quot;&gt;
+              </pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <p> doc.docco is an array of sections. Each one contains the </p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      &nbsp;
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <p> html for displaying the documention and code associated with it. </p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=75><pre class="prettyprint">
+              [[ _.forEach(doc.docco, function (section, i) { ]]
+                &lt;tr&gt;
+                  &lt;td class=&quot;file-docs&quot;&gt;
+                    [[= section.docsHtml ]]
+                  &lt;/td&gt;
+                  </pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <p> If no code text, leave an empty cell for formatting </p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=81><pre class="prettyprint">
+                  &lt;td class=&quot;file-code&quot;&gt;
+                    [[ if (!(/^\s*$/).test(section.codeText)) { ]]
+                      [[= section.codeHtml ]]
+                    [[ } else { ]]
+                      &amp;#xA0;
+                    [[ } ]]
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+              [[ }); ]]
+            &lt;/table&gt;
+          &lt;/div&gt;
+        [[ }); ]]
+      &lt;/div&gt;
+    &lt;/div&gt;
+    </pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <h3 id="scripts">Scripts</h3>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      &nbsp;
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <p> The main entry point generated by <a href="http://github.com/webpack/webpack">webpack</a> </p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=97><pre class="prettyprint">
+    &lt;script src=&quot;main.js&quot;&gt;&lt;/script&gt;
+    </pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <p> Use google-code-prettify to enhance the code view. </p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=99><pre class="prettyprint">
+    &lt;script src=&quot;https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js&quot;&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+</pre>
+                    
+                  </td>
+                </tr>
+              
+            </table>
+          </div>
+        
+          <div role="tabpanel" class="tab-pane fade" id="file-3">
+            <table class="file-table">
+              <!-- doc.docco is an array of sections. Each one contains the -->
+              <!-- html for displaying the documention and code associated with it. -->
+              
+                <tr>
+                  <td class="file-docs">
+                    
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=1><pre class="prettyprint">&#39;use strict&#39;;
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <h2 id="webpack-configuration">Webpack Configuration</h2>
+<p>This file is used for both testing under
+<a href="https://github.com/webpack/karma-webpack">karma-webpack</a>
+and <a href="https://github.com/shama/gulp-webpack">gulp-webpack</a>.</p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=7><pre class="prettyprint">var path = require(&#39;path&#39;);
+
+module.exports = {
+  cache: true,
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <h3 id="output">Output</h3>
+<p>karma-webpack will specify the output path when testing. This
+setting is used for building.</p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=14><pre class="prettyprint">  output: {
+    path: path.join(__dirname, &#39;./dist&#39;),
+    filename: &#39;main.js&#39;
+  },
+  module: {
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <h3 id="loaders">Loaders</h3>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=20><pre class="prettyprint">    loaders: [
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <p><strong>IMPORTANT</strong> This is needed so that each bootstrap js file required by
+bootstrap-webpack has access to the jQuery object</p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=23><pre class="prettyprint">      { test: /bootstrap\/js\//, loader: &#39;imports?jQuery=jquery&#39; },
+
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <p>Needed for the css-loader when <a href="https://github.com/bline/bootstrap-webpack">bootstrap-webpack</a>
+loads bootstrap’s css.</p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=27><pre class="prettyprint">      { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,   loader: &quot;url?limit=10000&amp;minetype=application/font-woff&quot; },
+      { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,    loader: &quot;url?limit=10000&amp;minetype=application/octet-stream&quot; },
+      { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,    loader: &quot;file&quot; },
+      { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,    loader: &quot;url?limit=10000&amp;minetype=image/svg+xml&quot; }
+    ]
+  }
+};
+
+
+</pre>
+                    
+                  </td>
+                </tr>
+              
+            </table>
+          </div>
+        
+          <div role="tabpanel" class="tab-pane fade" id="file-4">
+            <table class="file-table">
+              <!-- doc.docco is an array of sections. Each one contains the -->
+              <!-- html for displaying the documention and code associated with it. -->
+              
+                <tr>
+                  <td class="file-docs">
+                    <h2 id="setup">Setup</h2>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=2><pre class="prettyprint">var _ = require(&#39;lodash&#39;);
+var del = require(&quot;del&quot;);
+var gulp = require(&quot;gulp&quot;);
+var $ = require(&#39;gulp-load-plugins&#39;)();
+var opn = require(&#39;opn&#39;);
+var marked = require(&#39;marked&#39;);
+var cheerio = require(&#39;cheerio&#39;);
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <p><a href="http://karma-runner.github.io/">Karma</a> for running browser tests
+in <a href="http://phantomjs.org/">PhantomJS</a>.</p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=11><pre class="prettyprint">var karma = require(&#39;karma&#39;).server;
+
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <p>Load config for webpack target below.
+karma.conf.js uses the same configuration file.</p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=15><pre class="prettyprint">var webpackConfig = require(&quot;./webpack.config.js&quot;);
+
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <p>Custom template tags so cheerio doesn’t reformat
+our template markup.</p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=19><pre class="prettyprint">var TemplateOptions = {
+  interpolate: /\[\[=([\s\S]+?)\]\]/g,
+  escape:      /\[\[-([\s\S]+?)\]\]/g,
+  evaluate:    /\[\[([\s\S]+?)\]\]/g
+};
+
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <p><a href="http://karma-runner.github.io/">Karma</a> needs a full path to the config file.</p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=26><pre class="prettyprint">var KarmaConfig = require(&#39;path&#39;).join(__dirname, &#39;./karma.conf.js&#39;);
+
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <p>Sources for generating <code>index.html</code>.</p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=29><pre class="prettyprint">var IndexSources = [
+  &#39;index.js&#39;,
+  &#39;index.html&#39;,
+  &#39;webpack.config.js&#39;,
+  &#39;gulpfile.js&#39;,
+  &#39;karma.conf.js&#39;,
+  &#39;style.less&#39;,
+  &#39;bootstrap.config.less&#39;,
+  &#39;bootstrap.config.js&#39;
+];
+
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <h2 id="helper-functions">Helper Functions</h2>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      &nbsp;
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <h3 id="highlight">highlight</h3>
+<p>Returns code with <a href="https://code.google.com/p/google-code-prettify/">google-code-prettify</a>
+markup setup to use line numbers started at specified line. Used in both docco and
+doccoHtml to add prettify markup to the code sections of the docs.</p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=46><pre class="prettyprint">var highlight = function (code, startLine) {
+  html = &#39;&lt;?prettify&#39;;
+  if (_.isNumber(startLine))
+    html += &#39; linenums=&#39; + startLine;
+  html += &#39;&gt;&lt;pre class=&quot;prettyprint&quot;&gt;&#39; + _.escape(code) + &#39;&lt;/pre&gt;&#39;
+  return html;
+};
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <p>Setup marked to use our highlighter.</p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=54><pre class="prettyprint">marked.setOptions({ highlight: highlight });
+
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <h3 id="doccohtml">doccoHtml</h3>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      &nbsp;
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <p>Uses <a href="https://github.com/cheeriojs/cheerio">cheerio</a> to do for html
+what we use docco for with other languages. Extracts out the comments
+and maintains the line numbers for
+<a href="https://code.google.com/p/google-code-prettify/">google-code-prettify</a></p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=62><pre class="prettyprint">var doccoHtml = function (path, html, config) {
+  var walk, $, docs = [], sections = [], marker = &quot;&lt;!-- __MARKER__ --&gt;&quot;;
+  isValidComment = function (node) {
+    return node.type === &#39;comment&#39; &amp;&amp; !String(node.nodeValue).match(/\[if\s+[^\]]+\]/);
+  };
+  walk = function () {
+    if (isValidComment(this)) {
+      docs.push(this.nodeValue);
+      $(this).replaceWith($(marker));
+    } else {
+      $(this).contents().each(walk);
+    }
+  };
+  $ = cheerio.load(html);
+  $.root().contents().each(walk);
+  var nextDoc = &#39;&#39;, startLine = 1;
+  _.forEach($.html().split(marker), function (htmlPart) {
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <p>Edge Case - First thing in html is a comment, we loose a line if that happens.</p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=80><pre class="prettyprint">    if (htmlPart === &#39;&#39; &amp;&amp; nextDoc === &#39;&#39;)
+      startLine++;
+    else
+      startLine += nextDoc.split(&quot;\n&quot;).length - 1;
+    sections.push({
+      docsHtml: marked(nextDoc),
+      codeHtml: highlight(htmlPart, startLine),
+      codeText: htmlPart
+    });
+    startLine += htmlPart.split(&quot;\n&quot;).length - 1;
+    nextDoc = docs.shift() || &#39;&#39;;
+  });
+  return sections;
+};
+
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <h3 id="docco">docco</h3>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      &nbsp;
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <p><a href="http://jashkenas.github.io/docco/">docco</a> To parse out code/docs
+and <a href="https://github.com/chjj/marked">marked</a> to format the docs.
+marked is manually applied because we are using
+<a href="https://code.google.com/p/google-code-prettify/">google-code-prettify</a>
+to highlight code.</p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=102><pre class="prettyprint">var docco = function (path, code, config) {
+  if (/\.html$/.test(path)) {
+    return doccoHtml(path, code, config);
+  }
+  if (!config) config = {};
+  _.defaults(config, { languages: {} });
+
+  var d = require(&#39;docco&#39;);
+  var sections = d.parse(path, code, config);
+  var startLine = 1;
+  _.forEach(sections, function (section) {
+    if (section.docsText !== &#39;&#39;) {
+      startLine += section.docsText.split(&quot;\n&quot;).length - 1;
+    }
+    section.codeHtml = highlight(section.codeText, startLine);
+    startLine += section.codeText.split(&quot;\n&quot;).length - 1;
+    section.docsHtml = marked(section.docsText);
+  });
+  return sections;
+}
+
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <h2 id="tasks">Tasks</h2>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      &nbsp;
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <h3 id="task-clean">task clean</h3>
+<p>Cleans up dist directory using <a href="https://github.com/sindresorhus/del">del</a>.</p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=127><pre class="prettyprint">gulp.task(&quot;clean&quot;, function (done) {
+  del([&quot;dist/*&quot;], done);
+});
+
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <h3 id="task-index">task index</h3>
+<p>Build’s the index file with documentation from <a href="http://jashkenas.github.io/docco/">docco</a>
+with the <code>index.html</code> <a href="https://lodash.com/docs#template">lodash template</a>.</p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=134><pre class="prettyprint">gulp.task(&quot;index&quot;, [&quot;clean&quot;], function (done) {
+  var docs = [];
+  gulp.src(IndexSources)
+    .pipe($.tap(function (file) {
+      docs.push({
+        file: file,
+        docco: docco(file.path, file.contents.toString()),
+        id: _.uniqueId(&#39;file-&#39;)
+      })}))
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <p>After we’ve created the <code>docs</code> array, build the template.</p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=144><pre class="prettyprint">    .on(&#39;end&#39;, function () {
+      gulp.src(&#39;index.html&#39;)
+        .pipe($.template({ docs: docs }, TemplateOptions))
+        .pipe(gulp.dest(&#39;dist&#39;))
+        .on(&#39;end&#39;, function () { done() })
+    });
+});
+
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <h3 id="task-webpack">task webpack</h3>
+<p>Builds the main.js and any resources (bootstrap uses a few)
+into the dist directory. Uses <a href="https://github.com/shama/gulp-webpack">gulp-webpack</a>.</p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=155><pre class="prettyprint">gulp.task(&quot;webpack&quot;, [&quot;clean&quot;], function () {
+  return gulp.src(&quot;index.js&quot;)
+    .pipe($.webpack(webpackConfig))
+    .pipe(gulp.dest(&#39;dist&#39;));
+});
+
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <h3 id="task-build">task build</h3>
+<p>Build <code>index.html</code> and <code>main.js</code>.</p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=163><pre class="prettyprint">gulp.task(&quot;build&quot;, [&quot;webpack&quot;, &quot;index&quot;]);
+
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <h3 id="task-watch">task watch</h3>
+<p>Build and serve <code>index.html</code> on localhost port 3000
+launching a browser with <a href="https://github.com/sindresorhus/opn">opn</a> to view.
+If you have the <a href="https://github.com/vohof/gulp-livereload">livereload</a>
+plugin for chrome installed it will also reload
+your browser when files in the dist directory change.</p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=171><pre class="prettyprint">gulp.task(&quot;watch&quot;, [&quot;build&quot;], function () {
+  $.livereload.listen();
+  gulp.watch(&#39;dist/**/*&#39;).on(&#39;change&#39;, $.livereload.changed);
+  gulp.watch(IndexSources, [&#39;build&#39;]);
+  opn(&quot;http://127.0.0.1:3000/&quot;);
+  return $.serve(&#39;dist&#39;)();
+});
+
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <h3 id="task-deploy">task deploy</h3>
+<p>Deploy to Github pages. <em>UNTESTED</em></p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=181><pre class="prettyprint">gulp.task(&quot;deploy&quot;, [&#39;build&#39;], function () {
+  return gulp.src(&quot;dist/**/*&quot;)
+    .pipe($.ghPages(&#39;git@github.com:bline/bootstrap-webpack-example.git&#39;));
+});
+
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <h3 id="task-test">task test</h3>
+<p>Run tests in <a href="http://karma-runner.github.io/">Karma</a> using <a href="http://phantomjs.org/">FantomJS</a>.</p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=188><pre class="prettyprint">gulp.task(&quot;test&quot;, function (done) {
+  karma.start({
+    configFile: KarmaConfig,
+    singleRun: true
+  }, done);
+});
+
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <h3 id="task-default">task default</h3>
+<p>Run test by default.</p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=197><pre class="prettyprint">gulp.task(&quot;default&quot;, [&quot;test&quot;]);
+
+
+</pre>
+                    
+                  </td>
+                </tr>
+              
+            </table>
+          </div>
+        
+          <div role="tabpanel" class="tab-pane fade" id="file-5">
+            <table class="file-table">
+              <!-- doc.docco is an array of sections. Each one contains the -->
+              <!-- html for displaying the documention and code associated with it. -->
+              
+                <tr>
+                  <td class="file-docs">
+                    
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=1><pre class="prettyprint">&#39;use strict&#39;;
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <h2 id="karma-configuration">Karma Configuration</h2>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      &nbsp;
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <p><a href="http://karma-runner.github.io/">Karma</a> is used for running
+tests in this demo with the help of
+<a href="https://github.com/webpack/karma-webpack">karma-webpack</a>.</p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=7><pre class="prettyprint">
+module.exports = function (config) {
+  config.set({
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <ul>
+<li>frameworks - 
+Test frameworks we are using.
+<a href="http://mochajs.org/">mocha</a> and <a href="http://chaijs.com/">chai</a>.</li>
+</ul>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=13><pre class="prettyprint">    frameworks: [&#39;mocha&#39;, &#39;chai&#39;, &#39;chai-as-promised&#39;],
+
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <ul>
+<li>files - 
+Sets the entry point(s). Use a single entry point here
+unless you don’t mind a webpack per file.</li>
+</ul>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=18><pre class="prettyprint">    files: [
+      &#39;test/entry.js&#39;
+    ],
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <ul>
+<li>preprocessors - 
+Should match <code>files</code> and specify webpack as the preprocessor. If you
+wish to use <a href="https://github.com/demerzel3/karma-sourcemap-loader">karma-sourcemap-loader</a>
+see <a href="https://github.com/webpack/karma-webpack#source-maps">karma-webpack source-maps</a>.</li>
+</ul>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=25><pre class="prettyprint">    preprocessors: {
+      &#39;test/entry.js&#39;: [&#39;webpack&#39;]
+    },
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <ul>
+<li>webpack - 
+Uses the same webpack configuration as everything.
+karma-webpack overrides the output path and uses
+in-memory fs so it doesn’t hit to disk for tests.</li>
+</ul>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=32><pre class="prettyprint">    webpack: require(&#39;./webpack.config.js&#39;),
+    webpackServer: {
+      quiet: true,
+      stats: true
+    },
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <ul>
+<li>port - 
+Sets the port the run on when running tests. If this
+is conflicting with something, set it in the <code>gulpfile.js</code></li>
+</ul>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=40><pre class="prettyprint">    port: 8080,
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <ul>
+<li>logLevel - 
+set to <code>config.LOG_WARN</code> for more debugging output</li>
+</ul>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=43><pre class="prettyprint">    logLevel: config.LOG_INFO,
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <ul>
+<li>colors - 
+Who doesn’t like colors?</li>
+</ul>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=46><pre class="prettyprint">    colors: true,
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <ul>
+<li>autoWatch - 
+Tests are single run. Keep this off.</li>
+</ul>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=49><pre class="prettyprint">    autoWatch: false,
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <ul>
+<li>browsers - 
+Start these browsers, currently available:<ul>
+<li>Chrome</li>
+<li>ChromeCanary</li>
+<li>Firefox</li>
+<li>Opera</li>
+<li>Safari (only Mac)</li>
+<li>PhantomJS</li>
+<li>IE (only Windows)</li>
+</ul>
+</li>
+</ul>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=59><pre class="prettyprint">    browsers: [&#39;PhantomJS&#39;],
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <ul>
+<li>reporters - 
+<code>reporters: [&#39;progress&#39;]</code> option is handy for silent output and
+can be passed in in the gulpfile.js as any
+option can.</li>
+</ul>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=64><pre class="prettyprint">    reporters: [&#39;mocha&#39;],
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <ul>
+<li>captureTimeout -
+Increase if your tests take more than 60 seconds.</li>
+</ul>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=67><pre class="prettyprint">    captureTimeout: 60000,
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <ul>
+<li>singleRun - 
+We only want one run in our setup.</li>
+</ul>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=70><pre class="prettyprint">    singleRun: true,
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <ul>
+<li>plugins - 
+List of plugins we are using for frameworks, preprecessors, and reporters.</li>
+</ul>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=73><pre class="prettyprint">    plugins: [
+      require(&#39;karma-webpack&#39;),
+      require(&#39;karma-mocha&#39;),
+      require(&#39;karma-mocha-reporter&#39;),
+      require(&#39;karma-phantomjs-launcher&#39;),
+      require(&#39;karma-chai-plugins&#39;)
+    ]
+  });
+};
+
+
+</pre>
+                    
+                  </td>
+                </tr>
+              
+            </table>
+          </div>
+        
+          <div role="tabpanel" class="tab-pane fade" id="file-6">
+            <table class="file-table">
+              <!-- doc.docco is an array of sections. Each one contains the -->
+              <!-- html for displaying the documention and code associated with it. -->
+              
+                <tr>
+                  <td class="file-docs">
+                    
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      &nbsp;
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <h2 id="baseline">Baseline</h2>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      &nbsp;
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <p>Included from bootstrap.config.less.</p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=5><pre class="prettyprint">body {
+  padding-top: 20px;
+}
+
+.doc-content {
+  padding-top: 10px;
+}
+
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <h2 id="nav">Nav</h2>
+<p>When nav is affixed, set it’s position and size.</p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=15><pre class="prettyprint">#nav.affix {
+  position: fixed;
+  .opacity(0.8);
+  top: 3px;
+  width: 80%;
+  z-index: 10;
+}
+
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <h2 id="code">Code</h2>
+<p>Set up table to render two column view
+of documentation on left and code, syntax
+highlighted on the right.</p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=27><pre class="prettyprint">table.file-table {
+  width: 100%;
+  border-radius: @border-radius-base;
+  border: 0px;
+  border-spacing: 0px;
+  display: table;
+  table-layout: fixed;
+
+  td.file-docs {
+    background-color: #fff;
+    width: 30%;
+    max-width: 30%;
+    text-overflow: ellipsis;
+    padding: 5px;
+    vertical-align: top;
+  }
+
+  td.file-code {
+    border-left: 1px groove darken(#f5f5f5, 20%);
+    background-color: #f5f5f5;
+    color: #333;
+    width: 70%;
+    max-width: 70%;
+    text-overflow: ellipsis;
+    padding-left: 5px;
+    vertical-align: top;
+  }
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <p>Remove extra separation between the code
+so it looks more like one continuous block.</p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=56><pre class="prettyprint">  pre.prettyprint {
+    padding: 0 !important;
+    border: 0 !important;
+    margin: 0 0 !important;
+  }
+}
+
+
+</pre>
+                    
+                  </td>
+                </tr>
+              
+            </table>
+          </div>
+        
+          <div role="tabpanel" class="tab-pane fade" id="file-7">
+            <table class="file-table">
+              <!-- doc.docco is an array of sections. Each one contains the -->
+              <!-- html for displaying the documention and code associated with it. -->
+              
+                <tr>
+                  <td class="file-docs">
+                    <h2 id="customize-variables">Customize Variables</h2>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      &nbsp;
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <p>Remove borders around <code>&lt;pre&gt;</code> block so the code
+flows with our right column layout.</p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=5><pre class="prettyprint">@pre-border-color: @pre-bg; // hide the border.
+
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <h2 id="include-less">Include Less</h2>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      &nbsp;
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <p>Include our main less style sheet here so we can
+take advantage of boostrap variables and mixins.</p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=11><pre class="prettyprint">@import &quot;style.less&quot;;
+
+
+</pre>
+                    
+                  </td>
+                </tr>
+              
+            </table>
+          </div>
+        
+          <div role="tabpanel" class="tab-pane fade" id="file-8">
+            <table class="file-table">
+              <!-- doc.docco is an array of sections. Each one contains the -->
+              <!-- html for displaying the documention and code associated with it. -->
+              
+                <tr>
+                  <td class="file-docs">
+                    
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=1><pre class="prettyprint">&#39;use strict&#39;;
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <h2 id="bootstrap-webpack-configuration">bootstrap-webpack Configuration</h2>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=3><pre class="prettyprint">
+module.exports = {
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <h3 id="scripts">Scripts</h3>
+<p>Any scripts here set to false will never
+make it to the client, it’s not packaged
+by webpack.</p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=9><pre class="prettyprint">  scripts: {
+    &#39;transition&#39;: true,
+    &#39;alert&#39;: true,
+    &#39;button&#39;: true,
+    &#39;carousel&#39;: true,
+    &#39;collapse&#39;: true,
+    &#39;dropdown&#39;: true,
+    &#39;modal&#39;: true,
+    &#39;tooltip&#39;: true,
+    &#39;popover&#39;: true,
+    &#39;scrollspy&#39;: true,
+    &#39;tab&#39;: true,
+    &#39;affix&#39;: true
+  },
+</pre>
+                    
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td class="file-docs">
+                    <h3 id="styles">Styles</h3>
+<p>Enable or disable certain less components and thus remove
+the css for them from the build.</p>
+
+                  </td>
+                  <!-- If no code text, leave an empty cell for formatting -->
+                  <td class="file-code">
+                    
+                      <?prettify linenums=26><pre class="prettyprint">  styles: {
+    &quot;mixins&quot;: true,
+
+    &quot;normalize&quot;: true,
+    &quot;print&quot;: true,
+
+    &quot;scaffolding&quot;: true,
+    &quot;type&quot;: true,
+    &quot;code&quot;: true,
+    &quot;grid&quot;: true,
+    &quot;tables&quot;: true,
+    &quot;forms&quot;: true,
+    &quot;buttons&quot;: true,
+
+    &quot;component-animations&quot;: true,
+    &quot;glyphicons&quot;: true,
+    &quot;dropdowns&quot;: true,
+    &quot;button-groups&quot;: true,
+    &quot;input-groups&quot;: true,
+    &quot;navs&quot;: true,
+    &quot;navbar&quot;: true,
+    &quot;breadcrumbs&quot;: true,
+    &quot;pagination&quot;: true,
+    &quot;pager&quot;: true,
+    &quot;labels&quot;: true,
+    &quot;badges&quot;: true,
+    &quot;jumbotron&quot;: true,
+    &quot;thumbnails&quot;: true,
+    &quot;alerts&quot;: true,
+    &quot;progress-bars&quot;: true,
+    &quot;media&quot;: true,
+    &quot;list-group&quot;: true,
+    &quot;panels&quot;: true,
+    &quot;wells&quot;: true,
+    &quot;close&quot;: true,
+
+    &quot;modals&quot;: true,
+    &quot;tooltip&quot;: true,
+    &quot;popovers&quot;: true,
+    &quot;carousel&quot;: true,
+
+    &quot;utilities&quot;: true,
+    &quot;responsive-utilities&quot;: true
+  }
+};
+
+</pre>
+                    
+                  </td>
+                </tr>
+              
+            </table>
+          </div>
+        
+      </div>
+    </div>
+    <!-- ### Scripts -->
+    <!-- The main entry point generated by [webpack](http://github.com/webpack/webpack) -->
+    <script src="main.js"></script>
+    <!-- Use google-code-prettify to enhance the code view. -->
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+  </body>
+</html>
+
