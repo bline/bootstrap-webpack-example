@@ -51,11 +51,11 @@ the browser scrolls past the [Main Header].
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav" role="tablist">
                 <!-- Loop over each file and present a navigation link to activate the tab.  -->
-                [[ _.forEach(docs, function (doc, i) { ]]
-                  <li role="presentation" class="[[= i === 0 ? 'active' : '' ]]">
-                    <a href="#[[= doc.id ]]" role="tab" data-toggle="tab">[[= doc.file.relative ]]</a>
+                <% _.forEach(docs, function (doc, i) { %>
+                  <li role="presentation" class="<%= i === 0 ? 'active' : '' %>">
+                    <a href="#<%= doc.id %>" role="tab" data-toggle="tab"><%= doc.file.relative %></a>
                   </li>
-                [[ }); ]]
+                <% }); %>
               </ul>
             </div>
           </div>
@@ -67,29 +67,29 @@ the browser scrolls past the [Main Header].
 Outputs the generated html and docs in two panes.
 -->
       <div class="tab-content doc-content">
-        [[ _.forEach(docs, function (doc, i) { ]]
-          <div role="tabpanel" class="tab-pane fade[[= i === 0 ? ' in active' : '' ]]" id="[[= doc.id ]]">
+        <% _.forEach(docs, function (doc, i) { %>
+          <div role="tabpanel" class="tab-pane fade<%= i === 0 ? ' in active' : '' %>" id="<%= doc.id %>">
             <table class="file-table">
               <!-- doc.docco is an array of sections. Each one contains the -->
               <!-- html for displaying the documention and code associated with it. -->
-              [[ _.forEach(doc.docco, function (section, i) { ]]
+              <% _.forEach(doc.docco, function (section, i) { %>
                 <tr>
                   <td class="file-docs">
-                    [[= section.docsHtml ]]
+                    <%= section.docsHtml %>
                   </td>
                   <!-- If no code text, leave an empty cell for formatting -->
                   <td class="file-code">
-                    [[ if (!(/^\s*$/).test(section.codeText)) { ]]
-                      [[= section.codeHtml ]]
-                    [[ } else { ]]
+                    <% if (!(/^\s*$/).test(section.codeText)) { %>
+                      <%= section.codeHtml %>
+                    <% } else { %>
                       &nbsp;
-                    [[ } ]]
+                    <% } %>
                   </td>
                 </tr>
-              [[ }); ]]
+              <% }); %>
             </table>
           </div>
-        [[ }); ]]
+        <% }); %>
       </div>
     </div>
     <!-- ### Scripts -->
